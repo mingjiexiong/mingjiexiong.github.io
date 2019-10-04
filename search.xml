@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[个人图床搭建]]></title>
+    <url>%2F2019%2F10%2F04%2F%E4%B8%AA%E4%BA%BA%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[个人图床搭建这里我们选择Chevereto大家可以到官方的github上下载源码官方有四种安装方式这里选择第四种下载压缩包，通过宝塔上传到网站根目录/www/wwwroot/解压这里我们需要新建一个网站（这里推荐大家去创建一个二级域名）记得更改一下权限（不改权限的话，图床可能无法访问）我们新建一个网站，然后把目录指定一下创建后我们需要修改一下网站的伪静态具体源码如下：12345678910111213# Image not found replacementlocation ~* (jpe?g|png|gif) &#123;log_not_found off;error_page 404 /content/images/system/default/404.gif;&#125;# CORS header (avoids font rendering issues)location ~ \.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$ &#123;add_header Access-Control-Allow-Origin &quot;*&quot;;&#125;# Pretty URLslocation / &#123;try_files $uri $uri/ /index.php?$query_string;&#125;然后直接访问域名就可以看到界面了然后登陆进去会有英文界面，在网站域名后面输入settings就可以把全局设置为中文了。]]></content>
+      <categories>
+        <category>图床</category>
+      </categories>
+      <tags>
+        <tag>导航 - 分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[个人网盘搭建]]></title>
+    <url>%2F2019%2F10%2F03%2F%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[个人网盘搭建选择一款网盘nextcloud下载地址可道云下载地址cloudreve与阿里云OSS结合这里建议有阿里云主机的选择第三个下载宝塔服务器运维面板宝塔官网:选择对应的系统版本提示：要想进入宝塔面板还必须在云主机防火墙上面开放8888端口在软件商店安装好相应的运行环境在宝塔面板中点击文件进入/www/wwwroot把下载好的网盘压缩包放到这里面来解压然后点击进入宝塔网站模块，添加站点，设置好域名，网站目录，数据库等提示：数据库可以选择MySQL这里需要设置伪静态为thinkphp,有宝塔的可以直接设置最后点击或者输入域名进入安装界面设置好管理员账号密码还有数据库用户名和密码就好了设置阿里云OSS对象存储方式阿里云OSS对象存储可以提升上传下载速度,坏处就是要钱这里我们进入网盘的管理面板设置上传策略填好后我们还需要到OSS的基础设置里面添加跨域访问规则。点击新建，新建如下规则：最后设置好就OK啦]]></content>
+      <categories>
+        <category>网盘</category>
+      </categories>
+      <tags>
+        <tag>导航</tag>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo部署到远端的GitHub上]]></title>
     <url>%2F2019%2F10%2F03%2Fhexo%E9%83%A8%E7%BD%B2%E5%88%B0%E8%BF%9C%E7%AB%AF%E7%9A%84GitHub%E4%B8%8A%2F</url>
     <content type="text"><![CDATA[将本地文件部署到远端的GitHubgit安装 git：Windows安装：官网下载安装如果是其他Linux版本，可以直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install这几个命令安装就好了。配置全局用户名和全局邮箱：12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;your Email&quot;注意:git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。初始化本地文件git init*瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），细心的读者可以发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。*查询文件状态git status生成ssh key公钥：ssh-keygen -t rsa -C &#39;your email&#39;在GitHub上创建仓库然后把ssh key公钥添加进去关联仓库1.到 github 仓库然后复制仓库地址2.执行指令：git remote add origin 远程仓库地址检查是否连接成功ssh -T git@github.com提交到所有文件到暂存区git add .提交所有文件到本地仓库git commit -m &quot;备注&quot;提交到主仓库后，再提交到gitHub服务器上git push -u origin master由于新建的远程仓库是空的，所以要加上-u这个参数，等远程仓库里面有了内容之后，下次再从本地库上传内容的时候只需下面这样就可以了：git push origin master另外，这里有个坑需要注意一下，就是在创建远程仓库的时候，如果你勾选了Initialize this repository with a README（就是创建仓库的时候自动给你创建一个README文件），那么到了第九步你将本地仓库内容推送到远程仓库的时候就会报一个failed to push some refs to https://github.com/guyibang/TEST2.git的错。这是由于你新创建的那个仓库里面的README文件不在本地仓库目录中，这时我们可以通过以下命令先将内容合并一下：$ git pull --rebase origin master这时你再push就能成功了。流程图:总结**：其实只需要进行下面几步就能把本地项目上传到Github1、在本地创建一个版本库（即文件夹），通过git init把它变成Git仓库；2、把项目复制到这个文件夹里面，再通过git add .把项目添加到仓库；3、再通过git commit -m “注释内容”把项目提交到仓库；4、在Github上设置好SSH密钥后，新建一个远程仓库，通过git remote add origin 你的仓库地址将本地仓库和远程仓库进行关联；5、最后通过git push -u origin master把本地仓库的项目推送到远程仓库（也就是Github）上；（若新建远程仓库的时候自动创建了README文件会报错，解决办法看上面）。]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
       <tags>
-        <tag>git</tag>
+        <tag>导航</tag>
+        <tag>分享</tag>
       </tags>
   </entry>
   <entry>
