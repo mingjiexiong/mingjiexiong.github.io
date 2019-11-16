@@ -1,0 +1,246 @@
+<!-- build time:Sat Nov 16 2019 11:48:24 GMT+0800 (GMT+08:00) --><!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="Vue - Vuex,"><link rel="alternate" href="/atom.xml" title="小明网" type="application/atom+xml"><meta name="description" content="Vuex面试题汇总文章转载自： https://juejin.im/post/5dba91e4518825647e4ef18b什么是Vuex？参考答案Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，而更改状态的唯一方法是提交mutation，例this.$store.commit(&apos;SET_VIDEO_PAUSE&apos;, video_pause"><meta name="keywords" content="Vue - Vuex"><meta property="og:type" content="article"><meta property="og:title" content="Vuex面试题汇总"><meta property="og:url" content="http://blog.jiege123.art/2019/11/16/Vuex面试题汇总/index.html"><meta property="og:site_name" content="小明网"><meta property="og:description" content="Vuex面试题汇总文章转载自： https://juejin.im/post/5dba91e4518825647e4ef18b什么是Vuex？参考答案Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，而更改状态的唯一方法是提交mutation，例this.$store.commit(&apos;SET_VIDEO_PAUSE&apos;, video_pause"><meta property="og:locale" content="zh-Hans"><meta property="og:updated_time" content="2019-11-16T03:26:42.454Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Vuex面试题汇总"><meta name="twitter:description" content="Vuex面试题汇总文章转载自： https://juejin.im/post/5dba91e4518825647e4ef18b什么是Vuex？参考答案Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，而更改状态的唯一方法是提交mutation，例this.$store.commit(&apos;SET_VIDEO_PAUSE&apos;, video_pause"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Gemini",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!1,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="http://blog.jiege123.art/2019/11/16/Vuex面试题汇总/"><title>Vuex面试题汇总 | 小明网</title></head><script type="text/javascript" src="/js/src/dytitle.js"></script><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:1;pointer-events:none"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script type="text/javascript" src="/js/src/fireworks.js"></script><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><a href="https://github.com/xiongmingjie97" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD;color:#fff;position:absolute;top:0;border:0;right:0" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">小明网</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">我的个人博客</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://blog.jiege123.art/2019/11/16/Vuex面试题汇总/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="小明"><meta itemprop="description" content><meta itemprop="image" content="http://img.jiege123.art/images/2019/09/25/temp2.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="小明网"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Vuex面试题汇总</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-16T11:23:24+08:00">2019-11-16 </time></span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span> </a></span></span><span class="post-comments-count"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-comment-o"></i> </span><a href="/2019/11/16/Vuex面试题汇总/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/11/16/Vuex面试题汇总/" itemprop="commentCount"></span> </a></span><span class="post-meta-divider">|</span> <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次</span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i> </span><span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">2.6k </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">10</span></div></div></header><div class="post-body" itemprop="articleBody"><h1 id="Vuex面试题汇总"><a href="#Vuex面试题汇总" class="headerlink" title="Vuex面试题汇总"></a>Vuex面试题汇总</h1><p>文章转载自： <a href="https://juejin.im/post/5dba91e4518825647e4ef18b" target="_blank" rel="noopener">https://juejin.im/post/5dba91e4518825647e4ef18b</a></p><div data-v-4cdf82d6 data-id="5dcb74ace51d45215c7cfef1" itemprop="articleBody" class="article-content"><h4 class="heading" data-id="heading-0">什么是Vuex？</h4><details><summary>参考答案</summary><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，而更改状态的唯一方法是提交mutation，例<code>this.$store.commit('SET_VIDEO_PAUSE', video_pause</code>，<code>SET_VIDEO_PAUSE</code>为mutation属性中定义的方法 。</p></details><h4 class="heading" data-id="heading-1">Vuex解决了什么问题？</h4><details><summary>参考答案</summary><p>解决两个问题</p><ul><li>多个组件依赖于同一状态时，对于多层嵌套的组件的传参将会非常繁琐，并且对于兄弟组件间的状态传递无能为力。</li><li>来自不同组件的行为需要变更同一状态。以往采用父子组件直接引用或者通过事件来变更和同步状态的多份拷贝。以上的这些模式非常脆弱，通常会导致无法维护的代码。</li></ul></details><h4 class="heading" data-id="heading-2">什么时候用Vuex？</h4><details><summary>参考答案</summary><p>当项目遇到以下两种场景时</p><ul><li>多个组件依赖于同一状态时。</li><li>来自不同组件的行为需要变更同一状态。</li></ul></details><h4 class="heading" data-id="heading-3">Vuex的5个核心属性是什么？</h4><details><summary>参考答案</summary>分别是 state、getter、mutation、action、module 。</details><h4 class="heading" data-id="heading-4">Vuex中状态储存在哪里，怎么改变它？</h4><details><summary>参考答案</summary>存储在state中，改变Vuex中的状态的唯一途径就是显式地提交 (commit) mutation。</details><h4 class="heading" data-id="heading-5">Vuex中状态是对象，使用时候注意什么？</h4><details><summary>参考答案</summary>因为对象是引用类型，复制后改变属性还是会影响原始数据，这样会改变state里面的状态，是不允许，所以先用深度克隆复制对象，再修改。</details><h4 class="heading" data-id="heading-6">怎么在组件中批量使用Vuex的state状态？</h4><details><summary>参考答案</summary><p>使用mapState辅助函数, 利用对象展开运算符将state混入computed对象中</p><pre><code class="hljs bash copyable" lang="bash">import {mapState} from <span class="hljs-string">'vuex'</span>
+<span class="hljs-built_in">export</span> default{
+    computed:{
+        ...mapState([<span class="hljs-string">'price'</span>,<span class="hljs-string">'number'</span>])
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-7">Vuex中要从state派生一些状态出来，且多个组件使用它，该怎么做，？</h4><details><summary>参考答案</summary>使用getter属性，相当Vue中的计算属性computed，只有原状态改变派生状态才会改变。<p>getter接收两个参数，第一个是state，第二个是getters(可以用来访问其他getter)。</p><pre><code class="hljs bash copyable" lang="bash">const store = new Vuex.Store({
+    state: {
+        price: 10,
+        number: 10,
+        discount: 0.7,
+    },
+    getters: {
+        total: state =&gt; {
+            <span class="hljs-built_in">return</span> state.price * state.number
+        },
+        discountTotal: (state, getters) =&gt; {
+            <span class="hljs-built_in">return</span> state.discount * getters.total
+        }
+    },
+});
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后在组件中可以用计算属性computed通过<code>this.$store.getters.total</code>这样来访问这些派生转态。</p><pre><code class="hljs bash copyable" lang="bash">computed: {
+    <span class="hljs-function"><span class="hljs-title">total</span></span>() {
+        <span class="hljs-built_in">return</span> this.<span class="hljs-variable">$store</span>.getters.total
+    },
+    <span class="hljs-function"><span class="hljs-title">discountTotal</span></span>() {
+        <span class="hljs-built_in">return</span> this.<span class="hljs-variable">$store</span>.getters.discountTotal
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-8">怎么通过getter来实现在组件内可以通过特定条件来获取state的状态？</h4><details><summary>参考答案</summary><p>通过让getter返回一个函数，来实现给getter传参。然后通过参数来进行判断从而获取state中满足要求的状态。</p><pre><code class="hljs bash copyable" lang="bash">const store = new Vuex.Store({
+    state: {
+        todos: [
+            { id: 1, text: <span class="hljs-string">'...'</span>, <span class="hljs-keyword">done</span>: <span class="hljs-literal">true</span> },
+            { id: 2, text: <span class="hljs-string">'...'</span>, <span class="hljs-keyword">done</span>: <span class="hljs-literal">false</span> }
+        ]
+    },
+    getters: {
+        getTodoById: (state) =&gt; (id) =&gt;{
+            <span class="hljs-built_in">return</span> state.todos.find(todo =&gt; todo.id === id)
+        }
+    },
+});
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后在组件中可以用计算属性computed通过<code>this.$store.getters.getTodoById(2)</code>这样来访问这些派生转态。</p><pre><code class="hljs bash copyable" lang="bash">computed: {
+    <span class="hljs-function"><span class="hljs-title">getTodoById</span></span>() {
+        <span class="hljs-built_in">return</span> this.<span class="hljs-variable">$store</span>.getters.getTodoById
+    },
+}
+<span class="hljs-function"><span class="hljs-title">mounted</span></span>(){
+    console.log(this.getTodoById(2).done)//<span class="hljs-literal">false</span>
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-9">怎么在组件中批量使用Vuex的getter属性</h4><details><summary>参考答案</summary><p>使用mapGetters辅助函数, 利用对象展开运算符将getter混入computed 对象中</p><pre><code class="hljs bash copyable" lang="bash">import {mapGetters} from <span class="hljs-string">'vuex'</span>
+<span class="hljs-built_in">export</span> default{
+    computed:{
+        ...mapGetters([<span class="hljs-string">'total'</span>,<span class="hljs-string">'discountTotal'</span>])
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-10">怎么在组件中批量给Vuex的getter属性取别名并使用</h4><details><summary>参考答案</summary><p>使用mapGetters辅助函数, 利用对象展开运算符将getter混入computed 对象中</p><pre><code class="hljs bash copyable" lang="bash">import {mapGetters} from <span class="hljs-string">'vuex'</span>
+<span class="hljs-built_in">export</span> default{
+    computed:{
+        ...mapGetters(
+            myTotal:<span class="hljs-string">'total'</span>,
+            myDiscountTotal:<span class="hljs-string">'discountTotal'</span>,
+        )
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-11">在Vuex的state中有个状态number表示货物数量，在组件怎么改变它。</h4><details><summary>参考答案</summary><p>首先要在mutations中注册一个mutation</p><pre><code class="hljs bash copyable" lang="bash">const store = new Vuex.Store({
+    state: {
+        number: 10,
+    },
+    mutations: {
+        SET_NUMBER(state,data){
+            state.number=data;
+        }
+    },
+});
+<span class="copy-code-btn">复制代码</span></code></pre><p>在组件中使用<code>this.$store.commit</code>提交mutation，改变number</p><pre><code class="hljs bash copyable" lang="bash">this.<span class="hljs-variable">$store</span>.commit(<span class="hljs-string">'SET_NUMBER'</span>,10)
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-12">在Vuex中使用mutation要注意什么。</h4><details><summary>参考答案</summary>mutation 必须是同步函数</details><h4 class="heading" data-id="heading-13">在组件中多次提交同一个mutation，怎么写使用更方便。</h4><details><summary>参考答案</summary><p>使用mapMutations辅助函数,在组件中这么使用</p><pre><code class="hljs bash copyable" lang="bash">methods:{
+    ...mapMutations({
+        <span class="hljs-built_in">set</span>Number:<span class="hljs-string">'SET_NUMBER'</span>,
+    })
+}
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后调用<code>this.setNumber(10)</code>相当调用<code>this.$store.commit('SET_NUMBER',10)</code></p></details><h4 class="heading" data-id="heading-14">Vuex中action和mutation有什么区别？</h4><details><summary>参考答案</summary><ul><li>action 提交的是 mutation，而不是直接变更状态。mutation可以直接变更状态。</li><li>action 可以包含任意异步操作。mutation只能是同步操作。</li><li>提交方式不同，action 是用<code>this.$store.dispatch('ACTION_NAME',data)</code>来提交。mutation是用<code>this.$store.commit('SET_NUMBER',10)</code>来提交。</li><li>接收参数不同，mutation第一个参数是state，而action第一个参数是context，其包含了<pre><code class="hljs bash copyable" lang="bash">{
+    state,      // 等同于 `store.state`，若在模块中则为局部状态
+    rootState,  // 等同于 `store.state`，只存在于模块中
+    commit,     // 等同于 `store.commit`
+    dispatch,   // 等同于 `store.dispatch`
+    getters,    // 等同于 `store.getters`
+    rootGetters // 等同于 `store.getters`，只存在于模块中
+}
+<span class="copy-code-btn">复制代码</span></code></pre></li></ul></details><h4 class="heading" data-id="heading-15">Vuex中action和mutation有什么相同点？</h4><details><summary>参考答案</summary><p>第二参数都可以接收外部提交时传来的参数。 <code>this.$store.dispatch('ACTION_NAME',data)</code>和<code>this.$store.commit('SET_NUMBER',10)</code></p></details><h4 class="heading" data-id="heading-16">在组件中多次提交同一个action，怎么写使用更方便。</h4><details><summary>参考答案</summary><p>使用mapActions辅助函数,在组件中这么使用</p><pre><code class="hljs bash copyable" lang="bash">methods:{
+    ...mapActions({
+        <span class="hljs-built_in">set</span>Number:<span class="hljs-string">'SET_NUMBER'</span>,
+    })
+}
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后调用<code>this.setNumber(10)</code>相当调用<code>this.$store.dispatch('SET_NUMBER',10)</code></p></details><h4 class="heading" data-id="heading-17">Vuex中action通常是异步的，那么如何知道action什么时候结束呢？</h4><details><summary>参考答案</summary><p>在action函数中返回Promise，然后再提交时候用then处理</p><pre><code class="hljs bash copyable" lang="bash">actions:{
+    SET_NUMBER_A({commit},data){
+        <span class="hljs-built_in">return</span> new Promise((resolve,reject) =&gt;{
+            <span class="hljs-built_in">set</span>Timeout(() =&gt;{
+                commit(<span class="hljs-string">'SET_NUMBER'</span>,10)
+            },2000)
+        }
+        )
+    }
+}
+this.<span class="hljs-variable">$store</span>.dispatch(<span class="hljs-string">'SET_NUMBER_A'</span>).then(() =&gt; {
+  // ...
+})
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-18">Vuex中有两个action，分别是actionA和actionB，其内都是异步操作，在actionB要提交actionA，需在actionA处理结束再处理其它操作，怎么实现？</h4><details><summary>参考答案</summary><p>利用ES6的<code>async</code>和<code>await</code>来实现。</p><pre><code class="hljs bash copyable" lang="bash">actions:{
+    async actionA({commit}){
+        //...
+    },
+    async actionB({dispatch}){
+        await dispatch (<span class="hljs-string">'actionA'</span>)//等待actionA完成
+        // ... 
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-19">有用过Vuex模块吗，为什么要使用，怎么使用。</h4><details><summary>参考答案</summary><p>有，因为使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。所以将 store 分割成模块（module）。每个模块拥有自己的 state、mutations、actions、getters，甚至是嵌套子模块，从上至下进行同样方式的分割。</p><p>在module文件新建moduleA.js和moduleB.js文件。在文件中写入</p><pre><code class="hljs bash copyable" lang="bash">const state={
+    //...
+}
+const getters={
+    //...
+}
+const mutations={
+    //...
+}
+const actions={
+    //...
+}
+<span class="hljs-built_in">export</span> default{
+    state,
+    getters,
+    mutations,
+    actions
+}
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后再index.js引入模块</p><pre><code class="hljs bash copyable" lang="bash">import Vue from <span class="hljs-string">'vue'</span>;
+import Vuex from <span class="hljs-string">'vuex'</span>;
+Vue.use(Vuex);
+import moduleA from <span class="hljs-string">'./module/moduleA'</span>
+import moduleB from <span class="hljs-string">'./module/moduleB'</span>
+const store = new Vuex.Store({
+    modules:{
+        moduleA,
+        moduleB
+    }
+})
+<span class="hljs-built_in">export</span> default store
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-20">在模块中，getter和mutation接收的第一个参数state，是全局的还是模块的？</h4><details><summary>参考答案</summary>第一个参数state是模块的state，也就是局部的state。</details><h4 class="heading" data-id="heading-21">在模块中，getter和mutation和action中怎么访问全局的state和getter？</h4><details><summary>参考答案</summary><ul><li>在getter中可以通过第三个参数rootState访问到全局的state,可以通过第四个参数rootGetters访问到全局的getter。</li><li>在mutation中不可以访问全局的satat和getter，只能访问到局部的state。</li><li>在action中第一个参数context中的<code>context.rootState</code>访问到全局的state，<code>context.rootGetters</code>访问到全局的getter。</li></ul></details><h4 class="heading" data-id="heading-22">在组件中怎么访问Vuex模块中的getter和state,怎么提交mutation和action？</h4><details><summary>参考答案</summary><ul><li>直接通过<code>this.$store.getters</code>和<code>this.$store.state</code>来访问模块中的getter和state。</li><li>直接通过<code>this.$store.commit('mutationA',data)</code>提交模块中的mutation。</li><li>直接通过<code>this.$store.dispatch('actionA,data')</code>提交模块中的action。</li></ul></details><h4 class="heading" data-id="heading-23">用过Vuex模块的命名空间吗？为什么使用，怎么使用。</h4><details><summary>参考答案</summary><p>默认情况下，模块内部的action、mutation和getter是注册在全局命名空间，如果多个模块中action、mutation的命名是一样的，那么提交mutation、action时，将会触发所有模块中命名相同的mutation、action。</p><p>这样有太多的耦合，如果要使你的模块具有更高的封装度和复用性，你可以通过添加<code>namespaced: true</code> 的方式使其成为带命名空间的模块。</p><pre><code class="hljs bash copyable" lang="bash"><span class="hljs-built_in">export</span> default{
+    namespaced: <span class="hljs-literal">true</span>,
+    state,
+    getters,
+    mutations,
+    actions
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-24">怎么在带命名空间的模块内提交全局的mutation和action？</h4><details><summary>参考答案</summary><p>将 { root: true } 作为第三参数传给 dispatch 或 commit 即可。</p><pre><code class="hljs bash copyable" lang="bash">this.<span class="hljs-variable">$store</span>.dispatch(<span class="hljs-string">'actionA'</span>, null, { root: <span class="hljs-literal">true</span> })
+this.<span class="hljs-variable">$store</span>.commit(<span class="hljs-string">'mutationA'</span>, null, { root: <span class="hljs-literal">true</span> })
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-25">怎么在带命名空间的模块内注册全局的action？</h4><details><summary>参考答案</summary><pre><code class="hljs bash copyable" lang="bash">actions: {
+    actionA: {
+        root: <span class="hljs-literal">true</span>,
+        handler (context, data) { ... }
+    }
+  }
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-26">组件中怎么提交modules中的moduleA中的mutationA？</h4><details><summary>参考答案</summary><pre><code class="hljs bash copyable" lang="bash">this.<span class="hljs-variable">$store</span>.commit(<span class="hljs-string">'moduleA/mutationA'</span>,data)
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-27">怎么使用mapState，mapGetters，mapActions和mapMutations这些函数来绑定带命名空间的模块？</h4><details><summary>参考答案</summary><p>首先使用<code>createNamespacedHelpers</code>创建基于某个命名空间辅助函数</p><pre><code class="hljs bash copyable" lang="bash">import { createNamespacedHelpers } from <span class="hljs-string">'vuex'</span>;
+const { mapState, mapActions } = createNamespacedHelpers(<span class="hljs-string">'moduleA'</span>);
+<span class="hljs-built_in">export</span> default {
+    computed: {
+        // 在 `module/moduleA` 中查找
+        ...mapState({
+            a: state =&gt; state.a,
+            b: state =&gt; state.b
+        })
+    },
+    methods: {
+        // 在 `module/moduleA` 中查找
+        ...mapActions([
+            <span class="hljs-string">'actionA'</span>,
+            <span class="hljs-string">'actionB'</span>
+        ])
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-28">Vuex插件有用过吗？怎么用简单介绍一下？</h4><details><summary>参考答案</summary><p>Vuex插件就是一个函数，它接收 store 作为唯一参数。在Vuex.Store构造器选项plugins引入。 在store/plugin.js文件中写入</p><pre><code class="hljs bash copyable" lang="bash"><span class="hljs-built_in">export</span> default <span class="hljs-keyword">function</span> createPlugin(param){
+    <span class="hljs-built_in">return</span> store =&gt;{
+        //...
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后在store/index.js文件中写入</p><pre><code class="hljs bash copyable" lang="bash">import createPlugin from <span class="hljs-string">'./plugin.js'</span>
+const plugin = createPlugin()
+const store = new Vuex.Store({
+  // ...
+  plugins: [myPlugin]
+})
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-29">在Vuex插件中怎么监听组件中提交mutation和action？</h4><details><summary>参考答案</summary><ul><li>用Vuex.Store的实例方法<code>subscribe</code>监听组件中提交mutation</li><li>用Vuex.Store的实例方法<code>subscribeAction</code>监听组件中提交action 在store/plugin.js文件中写入</li></ul><pre><code class="hljs bash copyable" lang="bash"><span class="hljs-built_in">export</span> default <span class="hljs-keyword">function</span> createPlugin(param) {
+    <span class="hljs-built_in">return</span> store =&gt; {
+        store.subscribe((mutation, state) =&gt; {
+            console.log(mutation.type)//是那个mutation
+            console.log(mutation.payload)
+            console.log(state)
+        })
+        // store.subscribeAction((action, state) =&gt; {
+        //     console.log(action.type)//是那个action
+        //     console.log(action.payload)//提交action的参数
+        // })
+        store.subscribeAction({
+            before: (action, state) =&gt; {//提交action之前
+                console.log(`before action <span class="hljs-variable">${action.type}</span>`)
+            },
+            after: (action, state) =&gt; {//提交action之后
+                console.log(`after action <span class="hljs-variable">${action.type}</span>`)
+            }
+        })
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre><p>然后在store/index.js文件中写入</p><pre><code class="hljs bash copyable" lang="bash">import createPlugin from <span class="hljs-string">'./plugin.js'</span>
+const plugin = createPlugin()
+const store = new Vuex.Store({
+  // ...
+  plugins: [myPlugin]
+})
+<span class="copy-code-btn">复制代码</span></code></pre></details><h4 class="heading" data-id="heading-30">在v-model上怎么用Vuex中state的值？</h4><details><summary>参考答案</summary><p>需要通过computed计算属性来转换。</p><pre><code class="hljs bash copyable" lang="bash">&lt;input v-model=<span class="hljs-string">"message"</span>&gt;
+// ...
+computed: {
+    message: {
+        <span class="hljs-function"><span class="hljs-title">get</span></span> () {
+            <span class="hljs-built_in">return</span> this.<span class="hljs-variable">$store</span>.state.message
+        },
+        <span class="hljs-built_in">set</span> (value) {
+            this.<span class="hljs-variable">$store</span>.commit(<span class="hljs-string">'updateMessage'</span>, value)
+        }
+    }
+}
+<span class="copy-code-btn">复制代码</span></code></pre></details></div></div><div><div id="wechat_subscriber" style="display:block;padding:10px 0;margin:20px auto;width:100%;text-align:center"><img id="wechat_subscriber_qcode" src="https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0?wx_fmt=png" alt="小明 wechat" style="width:200px;max-width:100%"><div>扫码可以关注我哦！</div></div></div><div><div style="padding:10px 0;margin:20px auto;width:90%;text-align:center"><div>打赏</div><button id="rewardButton" disable="enable" onclick='var e=document.getElementById("QR");"none"===e.style.display?e.style.display="block":e.style.display="none"'><span>打赏</span></button><div id="QR" style="display:none"><div id="wechat" style="display:inline-block"><img id="wechat_qr" src="/images/wechatpay.png" alt="小明 微信支付"><p>微信支付</p></div><div id="alipay" style="display:inline-block"><img id="alipay_qr" src="/images/alipay.png" alt="小明 支付宝"><p>支付宝</p></div></div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Vue-Vuex/" rel="tag"><i class="fa fa-meh-o" aria-hidden="true"></i> Vue - Vuex</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2019/11/15/延迟脚本与异步脚本/" rel="next" title="延迟脚本与异步脚本"><i class="fa fa-chevron-left"></i> 延迟脚本与异步脚本</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2019/11/16/前端面试题/" rel="prev" title="前端面试题">前端面试题 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"><div class="jiathis_style"><span class="jiathis_txt">分享到：</span> <a class="jiathis_button_fav">收藏夹</a> <a class="jiathis_button_copy">复制网址</a> <a class="jiathis_button_email">邮件</a> <a class="jiathis_button_weixin">微信</a> <a class="jiathis_button_qzone">QQ空间</a> <a class="jiathis_button_tqq">腾讯微博</a> <a class="jiathis_button_douban">豆瓣</a> <a class="jiathis_button_share">一键分享</a> <a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> <a class="jiathis_counter_style"></a></div><script type="text/javascript">var jiathis_config={data_track_clickback:!0,summary:"",shortUrl:!1,hideMore:!1}</script><script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="http://img.jiege123.art/images/2019/09/25/temp2.jpg" alt="小明"><p class="site-author-name" itemprop="name">小明</p><p class="site-description motion-element" itemprop="description">一个分享个人笔记,个人生活经历,分享各种有趣资源,实用技能的个人二次元博客网站。</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">9</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">4</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">9</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-fw fa-globe"></i>rss</a> </span><span class="links-of-author-item"><a href="https://github.com/xiongmingjie97" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-block"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-link"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"><a href="http://example.com/" title="mytitle" target="_blank" rel="external nofollow">mytitle</a></li></ul>+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="80" src="//music.163.com/song/media/outer/url?id=443875380&auto=1&height=66"></iframe></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vuex面试题汇总"><span class="nav-number">1.</span> <span class="nav-text">Vuex面试题汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">什么是Vuex？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Vuex解决了什么问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">什么时候用Vuex？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Vuex的5个核心属性是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Vuex中状态储存在哪里，怎么改变它？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">Vuex中状态是对象，使用时候注意什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">怎么在组件中批量使用Vuex的state状态？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">Vuex中要从state派生一些状态出来，且多个组件使用它，该怎么做，？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">怎么通过getter来实现在组件内可以通过特定条件来获取state的状态？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">怎么在组件中批量使用Vuex的getter属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.11.</span> <span class="nav-text">怎么在组件中批量给Vuex的getter属性取别名并使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.12.</span> <span class="nav-text">在Vuex的state中有个状态number表示货物数量，在组件怎么改变它。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.13.</span> <span class="nav-text">在Vuex中使用mutation要注意什么。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.14.</span> <span class="nav-text">在组件中多次提交同一个mutation，怎么写使用更方便。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.15.</span> <span class="nav-text">Vuex中action和mutation有什么区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.16.</span> <span class="nav-text">Vuex中action和mutation有什么相同点？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.17.</span> <span class="nav-text">在组件中多次提交同一个action，怎么写使用更方便。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.18.</span> <span class="nav-text">Vuex中action通常是异步的，那么如何知道action什么时候结束呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.19.</span> <span class="nav-text">Vuex中有两个action，分别是actionA和actionB，其内都是异步操作，在actionB要提交actionA，需在actionA处理结束再处理其它操作，怎么实现？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.20.</span> <span class="nav-text">有用过Vuex模块吗，为什么要使用，怎么使用。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.21.</span> <span class="nav-text">在模块中，getter和mutation接收的第一个参数state，是全局的还是模块的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.22.</span> <span class="nav-text">在模块中，getter和mutation和action中怎么访问全局的state和getter？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.23.</span> <span class="nav-text">在组件中怎么访问Vuex模块中的getter和state,怎么提交mutation和action？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.24.</span> <span class="nav-text">用过Vuex模块的命名空间吗？为什么使用，怎么使用。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.25.</span> <span class="nav-text">怎么在带命名空间的模块内提交全局的mutation和action？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.26.</span> <span class="nav-text">怎么在带命名空间的模块内注册全局的action？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.27.</span> <span class="nav-text">组件中怎么提交modules中的moduleA中的mutationA？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.28.</span> <span class="nav-text">怎么使用mapState，mapGetters，mapActions和mapMutations这些函数来绑定带命名空间的模块？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.29.</span> <span class="nav-text">Vuex插件有用过吗？怎么用简单介绍一下？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.30.</span> <span class="nav-text">在Vuex插件中怎么监听组件中提交mutation和action？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.0.0.31.</span> <span class="nav-text">在v-model上怎么用Vuex中state的值？</span></a></li></ol></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span> <span class="with-love"><i class="fa fa-user"></i> </span><span class="author" itemprop="copyrightHolder">小明</span></div><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv">本站访客数 <i class="fa fa-user"></i> <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人次 </span><span class="site-pv">本站总访问量 <i class="fa fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次</span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script type="text/javascript">var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'LtFJcqhSxx1LX13uAnUjMg64-gzGzoHsz',
+        appKey: 'NjgUN9pnSmNEkUUcglQwYCH8',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });</script><script type="text/javascript">function proceedsearch(){$("body").append('<div class="search-popup-overlay local-search-pop-overlay"></div>').css("overflow","hidden"),$(".search-popup-overlay").click(onPopupClose),$(".popup").toggle();var t=$("#local-search-input");t.attr("autocapitalize","none"),t.attr("autocorrect","off"),t.focus()}var isfetched=!1,isXml=!0,search_path="search.xml";0===search_path.length?search_path="search.xml":/json$/i.test(search_path)&&(isXml=!1);var path="/"+search_path,onPopupClose=function(t){$(".popup").hide(),$("#local-search-input").val(""),$(".search-result-list").remove(),$("#no-result").remove(),$(".local-search-pop-overlay").remove(),$("body").css("overflow","")},searchFunc=function(t,e,o){"use strict";$("body").append('<div class="search-popup-overlay local-search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>').css("overflow","hidden"),$("#search-loading-icon").css("margin","20% auto 0 auto").css("text-align","center"),$.ajax({url:t,dataType:isXml?"xml":"json",async:!0,success:function(t){isfetched=!0,$(".popup").detach().appendTo(".header-inner");var n=isXml?$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get():t,r=document.getElementById(e),s=document.getElementById(o),a=function(){var t=r.value.trim().toLowerCase(),e=t.split(/[\s\-]+/);e.length>1&&e.push(t);var o=[];if(t.length>0&&n.forEach(function(n){function r(e,o,n,r){for(var s=r[r.length-1],a=s.position,i=s.word,l=[],h=0;a+i.length<=n&&0!=r.length;){i===t&&h++,l.push({position:a,length:i.length});var p=a+i.length;for(r.pop();0!=r.length&&(s=r[r.length-1],a=s.position,i=s.word,p>a);)r.pop()}return c+=h,{hits:l,start:o,end:n,searchTextCount:h}}function s(t,e){var o="",n=e.start;return e.hits.forEach(function(e){o+=t.substring(n,e.position);var r=e.position+e.length;o+='<b class="search-keyword">'+t.substring(e.position,r)+"</b>",n=r}),o+=t.substring(n,e.end)}var a=!1,i=0,c=0,l=n.title.trim(),h=l.toLowerCase(),p=n.content.trim().replace(/<[^>]+>/g,""),u=p.toLowerCase(),f=decodeURIComponent(n.url),d=[],g=[];if(""!=l&&(e.forEach(function(t){function e(t,e,o){var n=t.length;if(0===n)return[];var r=0,s=[],a=[];for(o||(e=e.toLowerCase(),t=t.toLowerCase());(s=e.indexOf(t,r))>-1;)a.push({position:s,word:t}),r=s+n;return a}d=d.concat(e(t,h,!1)),g=g.concat(e(t,u,!1))}),(d.length>0||g.length>0)&&(a=!0,i=d.length+g.length)),a){[d,g].forEach(function(t){t.sort(function(t,e){return e.position!==t.position?e.position-t.position:t.word.length-e.word.length})});var v=[];0!=d.length&&v.push(r(l,0,l.length,d));for(var $=[];0!=g.length;){var C=g[g.length-1],m=C.position,x=C.word,w=m-20,y=m+80;0>w&&(w=0),y<m+x.length&&(y=m+x.length),y>p.length&&(y=p.length),$.push(r(p,w,y,g))}$.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hits.length!==e.hits.length?e.hits.length-t.hits.length:t.start-e.start});var T=parseInt("1");T>=0&&($=$.slice(0,T));var b="";b+=0!=v.length?"<li><a href='"+f+"' class='search-result-title'>"+s(l,v[0])+"</a>":"<li><a href='"+f+"' class='search-result-title'>"+l+"</a>",$.forEach(function(t){b+="<a href='"+f+'\'><p class="search-result">'+s(p,t)+"...</p></a>"}),b+="</li>",o.push({item:b,searchTextCount:c,hitCount:i,id:o.length})}}),1===e.length&&""===e[0])s.innerHTML='<div id="no-result"><i class="fa fa-search fa-5x" /></div>';else if(0===o.length)s.innerHTML='<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>';else{o.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hitCount!==e.hitCount?e.hitCount-t.hitCount:e.id-t.id});var a='<ul class="search-result-list">';o.forEach(function(t){a+=t.item}),a+="</ul>",s.innerHTML=a}};r.addEventListener("input",a),$(".local-search-pop-overlay").remove(),$("body").css("overflow",""),proceedsearch()}})};$(".popup-trigger").click(function(t){t.stopPropagation(),isfetched===!1?searchFunc(path,"local-search-input","local-search-result"):proceedsearch()}),$(".popup-btn-close").click(onPopupClose),$(".popup").click(function(t){t.stopPropagation()}),$(document).on("keyup",function(t){var e=27===t.which&&$(".search-popup").is(":visible");e&&onPopupClose()})</script></body></html><!-- rebuild by neat -->
